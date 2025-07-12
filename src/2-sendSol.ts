@@ -5,12 +5,19 @@ import {
   lamports,
 } from "@solana/kit";
 import { getTransferSolInstruction } from "@solana-program/system";
-import { buildAndSendTransaction, setRpc } from "@orca-so/tx-sender";
+import {
+  buildAndSendTransaction,
+  setRpc,
+  setComputeUnitMarginMultiplier,
+} from "@orca-so/tx-sender";
 import fs from "fs";
 
 export async function sendSol() {
   // Initialize a connection to the RPC and read in private key
   await setRpc("https://api.devnet.solana.com");
+
+  // Set a higher compute unit margin multiplier
+  setComputeUnitMarginMultiplier(2);
 
   const wallet = await createKeyPairSignerFromBytes(
     new Uint8Array(
@@ -44,3 +51,4 @@ export async function sendSol() {
   const txHash = await buildAndSendTransaction([instruction], wallet);
   console.log("txHash:", txHash);
 }
+
