@@ -7,6 +7,8 @@ import { getPositions } from "./6-getPositions";
 import { getPool } from "./7-getPool";
 import { getPositionByAddress } from "./8-getPositionByAddress";
 import { createSplashPoolFn } from "./9-createSplashPool";
+import { openPositionFn } from "./10-openPosition";
+import { closePositionFn } from "./11-closePosition";
 
 // initialiseKeyPairAndAirdropAndGetBalance();
 // sendSol();
@@ -17,3 +19,5 @@ import { createSplashPoolFn } from "./9-createSplashPool";
 // getPool();
 // getPositionByAddress();
 // createSplashPoolFn();
+// openPositionFn();
+// closePositionFn();

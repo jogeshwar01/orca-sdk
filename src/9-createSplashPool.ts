@@ -205,14 +205,16 @@ async function mintTokensToAccount(
     mint: mint,
     token: tokenAccount,
     mintAuthority: signer.address,
-    amount: 10000,
+    amount: 10000000000,
   });
   instructions.push(mintToInstruction);
 
   // Send the transaction
   await buildAndSendTransaction(instructions, signer);
 
-  console.log(`Minted 10000 tokens - Mint(${mint}) Token(${tokenAccount})`);
+  console.log(
+    `Minted 10000000000 tokens - Mint(${mint}) Token(${tokenAccount})`
+  );
 }
 
 // import { createSetAuthorityInstruction, AuthorityType } from "@solana/spl-token";
@@ -226,3 +228,26 @@ async function mintTokensToAccount(
 
 // const tx = new Transaction().add(revokeMintAuthorityIx);
 // await sendAndConfirmTransaction(connection, tx, [currentMintAuthority]);
+
+// LOGS
+// wallet address: BGx1XuPKQ4vVTViN7ShUV7YizQPpsovPomsN41BB4h6t
+// Jito tip is not supported on this chain. Skipping jito tip.
+// Jito tip is not supported on this chain. Skipping jito tip.
+// tokenA: 5JTv7VHd1cJxEe6CzyJGjnKox2SnbuhDVG75Thu56sbx decimalA: 6
+// tokenB: 9khdEuvhj18wDFBEjFniH5iXymNEr8ZkrFBNbgxR6HJL decimalB: 9
+// Token account for mint 5JTv7VHd1cJxEe6CzyJGjnKox2SnbuhDVG75Thu56sbx: 9W3k7Djq5zmKafru6bnFwmgxGxrLu4Vfo6o1x8git5Ej
+// Token account for mint 9khdEuvhj18wDFBEjFniH5iXymNEr8ZkrFBNbgxR6HJL: 5R7cEqeTNfWyiVz4D3cM6bEkct4iWhR7GyqbEo8FcG2H
+// Token account does not exist. Creating it first...
+// Token account does not exist. Creating it first...
+// Jito tip is not supported on this chain. Skipping jito tip.
+// Jito tip is not supported on this chain. Skipping jito tip.
+// Minted 10000000000 tokens - Mint(9khdEuvhj18wDFBEjFniH5iXymNEr8ZkrFBNbgxR6HJL) Token(5R7cEqeTNfWyiVz4D3cM6bEkct4iWhR7GyqbEo8FcG2H)
+// Minted 10000000000 tokens - Mint(5JTv7VHd1cJxEe6CzyJGjnKox2SnbuhDVG75Thu56sbx) Token(9W3k7Djq5zmKafru6bnFwmgxGxrLu4Vfo6o1x8git5Ej)
+// Jito tip is not supported on this chain. Skipping jito tip.
+// txId: 64is6iQ6qN7pkW97RA5T5bLbnNGzpZEsmbS2SoxVM54npMQ8ekniauE4XWTrn6P3NtzDW7faAcxkzftzHWUE6ZX2
+// poolAddress: wu5xZMaqWCQGdZSPJAQEdXyNNZHh5a6NfVRkuG3rDCN
+//   tokenA: 5JTv7VHd1cJxEe6CzyJGjnKox2SnbuhDVG75Thu56sbx
+//   tokenB: 9khdEuvhj18wDFBEjFniH5iXymNEr8ZkrFBNbgxR6HJL
+//   tickSpacing: 32896
+//   initialPrice: 0.010000000000000002
+//   initialTick: 23027

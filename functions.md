@@ -46,3 +46,5 @@
 - `priceToTickIndex`
 - `fetchPosition`
 - `createSplashPool`
+- `openFullRangePosition`
+- `closePosition`
