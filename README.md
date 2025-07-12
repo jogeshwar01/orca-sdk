@@ -14,3 +14,5 @@
 const privateKeyBytes = bs58.decode(privateKeyBase58);
 const wallet = await createKeyPairSignerFromBytes(privateKeyBytes);
 ```
+
+- Use token-2022 only for all token related stuff

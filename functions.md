@@ -12,5 +12,7 @@ buildAndSendTransaction
 rpc.getTokenAccountsByOwner
 fetchToken
 
+rpc.getAccountInfo
 findAssociatedTokenPda
 getTransferCheckedInstruction
+getCreateAssociatedTokenInstruction
