@@ -16,3 +16,8 @@ rpc.getAccountInfo
 findAssociatedTokenPda
 getTransferCheckedInstruction
 getCreateAssociatedTokenInstruction
+
+getWhirlpoolAddress
+swap
+
+fetchPositionsForOwner

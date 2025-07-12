@@ -2,8 +2,12 @@ import { initialiseKeyPairAndAirdropAndGetBalance } from "./1-airdropAndGetBalan
 import { sendSol } from "./2-sendSol";
 import { getTokenBalance } from "./3-getTokenBalance";
 import { sendToken } from "./4-sendToken";
+import { executeSwap } from "./5-executeSwap";
+import { getPositions } from "./6-getPositions";
 
 // initialiseKeyPairAndAirdropAndGetBalance();
 // sendSol();
 // getTokenBalance();
-sendToken();
+// sendToken();
+executeSwap()
+// getPositions();
