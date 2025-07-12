@@ -1,29 +1,43 @@
-createSolanaRpc
-createKeyPairSignerFromBytes
-Rpc.getBalance
+## SDK Function Reference
 
-setWhirlpoolsConfig
-setDefaultFunder
-setComputeUnitMarginMultiplier
+#### RPC and Key Management
 
-getTransferSolInstruction
-buildAndSendTransaction
+- `createSolanaRpc`
+- `createKeyPairSignerFromBytes`
+- `Rpc.getBalance`
 
-rpc.getTokenAccountsByOwner
-fetchToken
+#### Configuration
 
-rpc.getAccountInfo
-findAssociatedTokenPda
-getTransferCheckedInstruction
-getCreateAssociatedTokenInstruction
+- `setWhirlpoolsConfig`
+- `setDefaultFunder`
+- `setComputeUnitMarginMultiplier`
 
-getWhirlpoolAddress
-swap
+#### Transaction Utilities
 
-fetchPositionsForOwner
+- `getTransferSolInstruction`
+- `buildAndSendTransaction`
 
-fetchWhirlpool
-sqrtPriceToPrice
-fetchSplashPool
-fetchConcentratedLiquidityPool
-fetchWhirlpoolsByTokenPair
+#### Token Management
+
+- `rpc.getTokenAccountsByOwner`
+- `fetchToken`
+
+#### Account Information
+
+- `rpc.getAccountInfo`
+- `findAssociatedTokenPda`
+- `getTransferCheckedInstruction`
+- `getCreateAssociatedTokenInstruction`
+
+#### Whirlpool Operations
+
+- `getWhirlpoolAddress`
+- `swap`
+- `fetchPositionsForOwner`
+- `fetchWhirlpool`
+- `sqrtPriceToPrice`
+- `fetchSplashPool`
+- `fetchConcentratedLiquidityPool`
+- `fetchWhirlpoolsByTokenPair`
+- `priceToTickIndex`
+- `fetchPosition`

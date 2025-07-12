@@ -5,6 +5,7 @@ import { sendToken } from "./4-sendToken";
 import { executeSwap } from "./5-executeSwap";
 import { getPositions } from "./6-getPositions";
 import { getPool } from "./7-getPool";
+import { getPositionByAddress } from "./8-getPositionByAddress";
 
 // initialiseKeyPairAndAirdropAndGetBalance();
 // sendSol();
@@ -13,3 +14,4 @@ import { getPool } from "./7-getPool";
 // executeSwap()
 // getPositions();
 // getPool();
+// getPositionByAddress();
