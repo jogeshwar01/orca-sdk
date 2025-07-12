@@ -4,10 +4,12 @@ import { getTokenBalance } from "./3-getTokenBalance";
 import { sendToken } from "./4-sendToken";
 import { executeSwap } from "./5-executeSwap";
 import { getPositions } from "./6-getPositions";
+import { getPool } from "./7-getPool";
 
 // initialiseKeyPairAndAirdropAndGetBalance();
 // sendSol();
 // getTokenBalance();
 // sendToken();
-executeSwap()
+// executeSwap()
 // getPositions();
+// getPool();

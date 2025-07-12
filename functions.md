@@ -21,3 +21,9 @@ getWhirlpoolAddress
 swap
 
 fetchPositionsForOwner
+
+fetchWhirlpool
+sqrtPriceToPrice
+fetchSplashPool
+fetchConcentratedLiquidityPool
+fetchWhirlpoolsByTokenPair
