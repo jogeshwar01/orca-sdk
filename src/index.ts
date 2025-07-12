@@ -6,6 +6,7 @@ import { executeSwap } from "./5-executeSwap";
 import { getPositions } from "./6-getPositions";
 import { getPool } from "./7-getPool";
 import { getPositionByAddress } from "./8-getPositionByAddress";
+import { createSplashPoolFn } from "./9-createSplashPool";
 
 // initialiseKeyPairAndAirdropAndGetBalance();
 // sendSol();
@@ -15,3 +16,4 @@ import { getPositionByAddress } from "./8-getPositionByAddress";
 // getPositions();
 // getPool();
 // getPositionByAddress();
+// createSplashPoolFn();

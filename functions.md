@@ -10,6 +10,7 @@
 
 - `setWhirlpoolsConfig`
 - `setDefaultFunder`
+- `setPayerFromBytes`
 - `setComputeUnitMarginMultiplier`
 
 #### Transaction Utilities
@@ -28,6 +29,9 @@
 - `findAssociatedTokenPda`
 - `getTransferCheckedInstruction`
 - `getCreateAssociatedTokenInstruction`
+- `getCreateAccountInstruction`
+- `getInitializeMint2Instruction`
+- `getMintToInstruction`
 
 #### Whirlpool Operations
 
@@ -41,3 +45,4 @@
 - `fetchWhirlpoolsByTokenPair`
 - `priceToTickIndex`
 - `fetchPosition`
+- `createSplashPool`
