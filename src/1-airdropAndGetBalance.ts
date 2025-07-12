@@ -18,8 +18,8 @@ export async function initialiseKeyPairAndAirdropAndGetBalance() {
   const wallet = await createKeyPairSignerFromBytes(keyPairBytes);
   console.log("Wallet: ", wallet.address);
 
-  // devnetRpc.requestAirdrop(wallet.address, lamports(1000000000n)).send();
-  // console.log("Airdrop 1 SOL to ", wallet.address);
+  devnetRpc.requestAirdrop(wallet.address, lamports(1000000000n)).send();
+  console.log("Airdrop 1 SOL to ", wallet.address);
 
   const balance = await devnetRpc.getBalance(wallet.address).send();
   console.log("Balance: ", balance);
