@@ -4,64 +4,63 @@ import {
   setWhirlpoolsConfig,
   swap,
 } from "@orca-so/whirlpools";
-import { address } from "@solana/kit";
+import { address, createKeyPairSignerFromBytes } from "@solana/kit";
 import { getWhirlpoolAddress } from "@orca-so/whirlpools-client";
+import bs58 from "bs58";
 
 import fs from "fs";
 
 export async function executeSwap() {
   // Initialize a connection to the RPC and read in private key
-  await setRpc("https://api.devnet.solana.com");
-  const signer = await setPayerFromBytes(
-    new Uint8Array(
-      JSON.parse(
-        fs.readFileSync("/home/jogeshwar/.config/solana/id.json", "utf-8")
-      )
-    )
-  );
-  await setWhirlpoolsConfig("solanaDevnet");
+  await setRpc("https://api.mainnet-beta.solana.com");
+  const privateKeyBytes = bs58.decode("<PRIVATE_KEY_HERE>");
+  const signer = await setPayerFromBytes(privateKeyBytes);
+
+  await setWhirlpoolsConfig("solanaMainnet");
   console.log("signer:", signer.address);
 
   // Token definition
-  // devToken specification
-  // https://everlastingsong.github.io/nebula/
-  const devUSDC = {
-    mint: address("BRjpCHtyQLNCo8gqRUr8jtdAj5AjPYQaoqbvcZiHok1k"),
-    decimals: 6,
-  };
-  const devSAMO = {
-    mint: address("Jd4M8bfJG3sAkd82RsGWyEXoaBXQP7njFzBwEaCTuDa"),
+  const tokenSOL = {
+    mint: address("So11111111111111111111111111111111111111112"),
     decimals: 9,
+  };
+  const tokenUSDC = {
+    mint: address("EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"),
+    decimals: 6,
   };
 
   // WhirlpoolsConfig account
-  // devToken ecosystem / Orca Whirlpools
-  const DEVNET_WHIRLPOOLS_CONFIG = address(
-    "FcrweFY1G9HJAHG5inkGB6pKg1HZ6x9UC2WioAfWrGkR"
-  );
-  const whirlpoolConfigAddress = address(DEVNET_WHIRLPOOLS_CONFIG.toString());
+  // Mainnet Orca Whirlpools - SOL-USDC
+  // // the one on orca is the PDA itself so dont use that
+  // const MAINNET_WHIRLPOOLS_CONFIG = address(
+  //   "Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE"
+  // );
+  // const whirlpoolConfigAddress = address(MAINNET_WHIRLPOOLS_CONFIG.toString());
 
-  // Get devSAMO/devUSDC whirlpool
-  // Whirlpools are identified by 5 elements (Program, Config, mint address of the 1st token,
-  // mint address of the 2nd token, tick spacing), similar to the 5 column compound primary key in DB
-  const tickSpacing = 64;
-  const [whirlpoolPda] = await getWhirlpoolAddress(
-    whirlpoolConfigAddress,
-    devSAMO.mint,
-    devUSDC.mint,
-    tickSpacing
-  );
-  console.log("whirlpoolPda:", whirlpoolPda);
+  // // Get SOL-USDC whirlpool
+  // // Whirlpools are identified by 5 elements (Program, Config, mint address of the 1st token,
+  // // mint address of the 2nd token, tick spacing), similar to the 5 column compound primary key in DB
+  // // Try different tick spacings for SOL-USDC pool
+  // const tickSpacing = 1; // Most common for SOL-USDC concentrated liquidity pools
+  // const [whirlpoolPda] = await getWhirlpoolAddress(
+  //   whirlpoolConfigAddress,
+  //   tokenSOL.mint,
+  //   tokenUSDC.mint,
+  //   tickSpacing
+  // );
+  // console.log("whirlpoolPda:", whirlpoolPda);
 
-  // Swap 1 devUSDC for devSAMO
+  const whirlpoolPda = address("Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE");
+
+  // Swap 0.1 USDC for SOL
   const amountIn = BigInt(100_000);
 
   // Obtain swap estimation (run simulation)
   const { quote, callback: sendTx } = await swap(
     // Input token and amount
     {
-      mint: devUSDC.mint,
-      inputAmount: amountIn, // swap 0.1 devUSDC to devSAMO
+      mint: tokenUSDC.mint,
+      inputAmount: amountIn, // swap 0.1 USDC to SOL
     },
     whirlpoolPda,
     // Acceptable slippage (100bps = 1%)
