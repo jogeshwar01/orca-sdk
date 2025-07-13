@@ -16,3 +16,5 @@ const wallet = await createKeyPairSignerFromBytes(privateKeyBytes);
 ```
 
 - Use token-2022 only for all token related stuff
+
+- whirlpools dont support token-2022 - so use token to create mint and all if pools are to be created
