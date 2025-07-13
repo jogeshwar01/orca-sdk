@@ -9,6 +9,7 @@ import { getPositionByAddress } from "./8-getPositionByAddress";
 import { createSplashPoolFn } from "./9-createSplashPool";
 import { openPositionFn } from "./10-openPosition";
 import { closePositionFn } from "./11-closePosition";
+import { getFeeAndRewardsQuote } from "./12-getFeeAndRewardsQuote";
 
 // initialiseKeyPairAndAirdropAndGetBalance();
 // sendSol();
@@ -21,3 +22,4 @@ import { closePositionFn } from "./11-closePosition";
 // createSplashPoolFn();
 // openPositionFn();
 // closePositionFn();
+// getFeeAndRewardsQuote();
